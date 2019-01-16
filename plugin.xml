@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-eposprint" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>ePosPrinter</name>
+  <js-module name="ePosPrinter" src="www/ePosPrinter.js">
+    <clobbers target="ePosPrinter" />
+  </js-module>
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="ePosPrinter">
+        <param name="ios-package" value="ePosPrinter" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    
+    <config-file target="*-Info.plist" parent="UISupportedExternalAccessoryProtocols">
+      <array>
+        <string>com.epson.escpos</string>
+      </array>
+    </config-file>
+
+    <header-file src="src/ios/ePosConstantsConverter.h" />
+    <source-file src="src/ios/ePosConstantsConverter.m" />
+    <header-file src="src/ios/ePosPrinter.h" />
+    <source-file src="src/ios/ePosPrinter.m" />
+    <header-file src="src/ios/ePosSdk/ePOS2.h" />
+    <source-file src="src/ios/ePosSdk/libepos2.a" framework="true" />
+    <framework src="ExternalAccessory.framework" />
+    <framework src="libxml2.2.dylib" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="UIKit.framework" />
+    <framework src="Foundation.framework" />
+    <framework src="libepos2.a" />
+  </platform>
+</plugin>

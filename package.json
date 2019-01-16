@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Code Alone"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-eposprint",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "private": true,
+  "deprecated": false,
+  "description": "Cordova plugin for Epson ePOS SDK",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "ISC License, Copyright 2017 Code Alone",
+  "name": "cordova-plugin-eposprint",
+  "version": "0.1.2"
+}
